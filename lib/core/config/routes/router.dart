@@ -16,7 +16,8 @@ class AppRoute {
       case todosRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getIt<TodoCubit>()..getTodos(),
+            create: (context) =>
+                getIt<TodoCubit>(param1: tickerProvider)..getTodos(),
             child: const TodosPage(),
           ),
           fullscreenDialog: true,
